@@ -72,6 +72,7 @@ Register missing phone
     Close Window
 
 Register user1
+
     Open Browser  ${register_url}  ${browser}
     Input text  ${userfield}  ${user1}[username]
     Input text  ${passfield}  ${user1}[password]
@@ -93,6 +94,7 @@ Register user1 again
     Click button  Register
     ${url}=  Get Location
     Should Be Equal  ${url}  ${register_url}
+    Element should contain  xpath://html/body/section/div  is already registered
     Close Window
 
 Login with valid user
@@ -151,13 +153,3 @@ Login with all fields empty
     ${url}=  Get Location
     Should Be Equal  ${url}  ${login_url}
     Close Window
-
-
-
-#Create user
-#    Open Browser  http://127.0.0.1:8080/login  ${BROWSER}
-#    Input Text  name:username  user1
-#    Input Text  name:password  1
-    #Click Element       //*[contains(text(),'Log In')]
-#    submit form
-#    Close Window

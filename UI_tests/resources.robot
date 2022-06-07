@@ -8,6 +8,7 @@ Library           SeleniumLibrary
 Library  Collections
 Library  SeleniumLibrary
 Variables  variables.py
+Library  String
 
 *** Variables ***
 #${SERVER}         localhost:8080
