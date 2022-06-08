@@ -118,4 +118,4 @@ Error try again login
      ${temp}=  Evaluate  $rowIndex - 2
      Should Be Equal  ${curText}  ${user1_np}[${temp}]  # checks that exported data is as expected
     END
-
+    Close Window
