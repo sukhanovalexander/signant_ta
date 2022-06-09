@@ -14,6 +14,8 @@ user3 = {'username': 'User3', 'password': 'Pass3', 'firstname': 'Firsname3', 'la
          'phone': 'Phone3'}
 user3_np = drop_pass_give_list(user3)
 
+users = {'user1': user1, 'user2': user2, 'user3': user3}
+
 server = 'localhost:8080'
 browser = 'Chrome'
 base_url = 'http://{}/'.format(server)
