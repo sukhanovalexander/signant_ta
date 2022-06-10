@@ -1,5 +1,13 @@
+import random
+from string import printable
+
+
 def drop_pass_give_list(s: dict):
     return [y for x, y in s.items() if x != 'password']
+
+
+def rs(base, ln):  # random string from base characters, ln length
+    return ''.join(random.choice(base) for i in range(ln))
 
 
 user1 = {'username': 'User11', 'password': 'Pass11', 'firstname': 'Firsname11', 'lastname': 'Lastname11',
@@ -13,6 +21,24 @@ user2_np = drop_pass_give_list(user2)
 user3 = {'username': 'User3', 'password': 'Pass3', 'firstname': 'Firsname3', 'lastname': 'Lastname3',
          'phone': 'Phone3'}
 user3_np = drop_pass_give_list(user3)
+
+
+apiuser1 = {'username': 'apiuser1', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
+            'phone': 'apihone1'}
+apiuser2 = {'username': 'apiuser1', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
+            'phone': 'apihone1'}
+
+p = printable.replace('/', '')  # remove '/' from usernames to avoid conflict at /api/users/{username}
+apirand1 = {'username': rs(p, random.randrange(4, 10)), 'password': rs(p, random.randrange(4, 10)),
+            'firstname': rs(p, random.randrange(4, 10)), 'lastname': rs(p, random.randrange(4, 10)),
+            'phone': rs(p, random.randrange(4, 10))}
+apirand2 = {'username': rs(p, random.randrange(4, 10)), 'password': rs(p, random.randrange(4, 10)),
+            'firstname': rs(p, random.randrange(4, 10)), 'lastname': rs(p, random.randrange(4, 10)),
+            'phone': rs(p, random.randrange(4, 10))}
+
+apiuser3 = {'username': 'api/user', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
+            'phone': 'apihone1'}
+
 
 users = {'user1': user1, 'user2': user2, 'user3': user3}
 
