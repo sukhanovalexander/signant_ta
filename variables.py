@@ -1,5 +1,5 @@
 import random
-from string import printable
+from string import digits, ascii_letters
 
 
 def drop_pass_give_list(s: dict):
@@ -28,7 +28,7 @@ apiuser1 = {'username': 'apiuser1', 'password': 'apipass1', 'firstname': 'apifir
 apiuser2 = {'username': 'apiuser1', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
             'phone': 'apihone1'}
 
-p = printable.replace('/', '')  # remove '/' from usernames to avoid conflict at /api/users/{username}
+p = ascii_letters + digits
 apirand1 = {'username': rs(p, random.randrange(4, 10)), 'password': rs(p, random.randrange(4, 10)),
             'firstname': rs(p, random.randrange(4, 10)), 'lastname': rs(p, random.randrange(4, 10)),
             'phone': rs(p, random.randrange(4, 10))}
@@ -36,11 +36,12 @@ apirand2 = {'username': rs(p, random.randrange(4, 10)), 'password': rs(p, random
             'firstname': rs(p, random.randrange(4, 10)), 'lastname': rs(p, random.randrange(4, 10)),
             'phone': rs(p, random.randrange(4, 10))}
 
-apiuser3 = {'username': 'api/user', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
+apislash = {'username': 'api/user', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
             'phone': 'apihone1'}
 
 
-users = {'user1': user1, 'user2': user2, 'user3': user3}
+users = {'user1': user1, 'user2': user2, 'user3': user3, 'apirand1': apirand1, 'apirand2': apirand2,
+         'apislash': apislash}
 
 server = 'localhost:8080'
 browser = 'Chrome'
