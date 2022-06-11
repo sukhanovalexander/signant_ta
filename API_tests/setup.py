@@ -11,8 +11,8 @@ logger.addHandler(handler)
 
 config = c.ConfigParser()
 try:
-    config.read('config.ini')
-    host = config['server']['url']
+    config.read(['config.ini', '../config.ini'])  # do not like this part, needs to be refactored. configparser does not
+    host = config['server']['url']  # see config.ini when executing test. Possible solution from_root module
 
     token_route = config['api']['token_route']
     user_route = config['api']['user_route']

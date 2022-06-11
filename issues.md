@@ -5,4 +5,4 @@
 # Found problems
 1. Even though the firstname/lastname/phone fields are mandatory in web page, they are not in the register() method in auth.py. Initially I used "submit form" at login page tests, and it did not simulate user behavior correctly and created users with partially complete data. Due to this behavior switched to button click 
 2. Github page states that GET request on route /api/users requires token. However, any user can access data even including not valid token. Corresponding method does not have @tokeqrequired decorator
-3. 
+3. Any user with valid token can access another user details on route /api/users/{username}

@@ -10,16 +10,21 @@ def rs(base, ln):  # random string from base characters, ln length
     return ''.join(random.choice(base) for i in range(ln))
 
 
+def new_random_user():
+    p = ascii_letters + digits
+    return {'username': rs(p, random.randrange(4, 10)), 'password': rs(p, random.randrange(4, 10)),
+            'firstname': rs(p, random.randrange(4, 10)), 'lastname': rs(p, random.randrange(4, 10)),
+            'phone': rs(p, random.randrange(4, 10))}
+
+
 user1 = {'username': 'User11', 'password': 'Pass11', 'firstname': 'Firsname11', 'lastname': 'Lastname11',
          'phone': 'Phone11'}
-user1_np = drop_pass_give_list(user1)  # np == no password
-
 user2 = {'username': 'User2', 'password': 'Pass2', 'firstname': 'Firsname2', 'lastname': 'Lastname2',
          'phone': 'Phone2'}
-user2_np = drop_pass_give_list(user2)
-
 user3 = {'username': 'User3', 'password': 'Pass3', 'firstname': 'Firsname3', 'lastname': 'Lastname3',
          'phone': 'Phone3'}
+user1_np = drop_pass_give_list(user1)  # np == no password, used in UI test
+user2_np = drop_pass_give_list(user2)
 user3_np = drop_pass_give_list(user3)
 
 
@@ -27,21 +32,13 @@ apiuser1 = {'username': 'apiuser1', 'password': 'apipass1', 'firstname': 'apifir
             'phone': 'apihone1'}
 apiuser2 = {'username': 'apiuser1', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
             'phone': 'apihone1'}
-
-p = ascii_letters + digits
-apirand1 = {'username': rs(p, random.randrange(4, 10)), 'password': rs(p, random.randrange(4, 10)),
-            'firstname': rs(p, random.randrange(4, 10)), 'lastname': rs(p, random.randrange(4, 10)),
-            'phone': rs(p, random.randrange(4, 10))}
-apirand2 = {'username': rs(p, random.randrange(4, 10)), 'password': rs(p, random.randrange(4, 10)),
-            'firstname': rs(p, random.randrange(4, 10)), 'lastname': rs(p, random.randrange(4, 10)),
-            'phone': rs(p, random.randrange(4, 10))}
-
-apislash = {'username': 'api/user', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
-            'phone': 'apihone1'}
-
+apirand1 = new_random_user()
+apirand2 = new_random_user()
+techuser = {'username': 'root', 'password': 'root', 'firstname': 'root', 'lastname': 'root',
+            'phone': 'root'}
 
 users = {'user1': user1, 'user2': user2, 'user3': user3, 'apirand1': apirand1, 'apirand2': apirand2,
-         'apislash': apislash}
+         'techuser': techuser}
 
 server = 'localhost:8080'
 browser = 'Chrome'
