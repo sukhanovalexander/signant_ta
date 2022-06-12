@@ -36,9 +36,12 @@ apirand1 = new_random_user()
 apirand2 = new_random_user()
 techuser = {'username': 'root', 'password': 'root', 'firstname': 'root', 'lastname': 'root',
             'phone': 'root'}
+techuser_token = ''
 
 users = {'user1': user1, 'user2': user2, 'user3': user3, 'apirand1': apirand1, 'apirand2': apirand2,
          'techuser': techuser}
+
+UI_tests_executed = False
 
 server = 'localhost:8080'
 browser = 'Chrome'
