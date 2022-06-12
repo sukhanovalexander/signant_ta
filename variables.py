@@ -38,8 +38,8 @@ techuser = {'username': 'root', 'password': 'root', 'firstname': 'root', 'lastna
             'phone': 'root'}
 techuser_token = ''
 
-users = {'user1': user1, 'user2': user2, 'user3': user3, 'apirand1': apirand1, 'apirand2': apirand2,
-         'techuser': techuser}
+# users = {'user1': user1, 'user2': user2, 'user3': user3, 'apirand1': apirand1, 'apirand2': apirand2,
+#         'techuser': techuser}
 
 UI_tests_executed = False
 

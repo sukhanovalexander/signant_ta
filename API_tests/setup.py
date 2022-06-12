@@ -2,7 +2,7 @@ import sys
 import configparser as c
 import logging
 import json
-from variables import users as u
+#from variables import users as u
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler()
@@ -17,7 +17,7 @@ try:
     token_route = config['api']['token_route']
     user_route = config['api']['user_route']
     head = json.loads(config['api']['head'])
-    users = u
+#    users = u
 
 except c.Error:
     logger.critical('Error importing configs')
