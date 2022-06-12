@@ -27,7 +27,7 @@ def new_user3():
 def pytest_sessionstart(session):
     api.post_user(variables.techuser)
     code, variables.techuser_token = api.get_token(variables.techuser['username'], variables.techuser['password'])
-    existing_users = api.get_users(variables.techuser_token)
+    code, existing_users = api.get_users(variables.techuser_token)
     variables.UI_tests_executed = True if variables.user1['username'] in existing_users and \
                                           variables.user2['username'] else False
 
