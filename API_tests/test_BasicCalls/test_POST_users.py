@@ -66,6 +66,14 @@ def test_create_user_no_password():
 
 
 @decorate_no_user_added
+def test_create_user_no_credentials():
+    data = variables.new_random_user()
+    data['username'], data['password'] = '', ''
+    code = api.post_user(data)
+    assert code >= 400
+
+
+@decorate_no_user_added
 def test_create_user_no_username():
     data = variables.new_random_user()
     data['username'] = ''

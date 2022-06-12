@@ -72,9 +72,18 @@ if __name__ == '__main__':
     #  get user details
     #  update user details
     post_code = post_user(setup.users['apirand1'])
-    token_code, token1 = get_token(setup.users['apirand1']['username'], setup.users['apirand2']['password'])
-    list_code, user_list = get_users(token1)
-    det_code, user_det = get_user_details(token1, setup.users['apirand1']['username'])
+    post_code2 = post_user(setup.users['apirand2'])
+    token_code1, token1 = get_token(setup.users['apirand1']['username'], setup.users['apirand1']['password'])
+    token_code2, token2 = get_token(setup.users['apirand2']['username'], setup.users['apirand2']['password'])
+    #  list_code, user_list = get_users(token1)
+    #  det_code, user_det = get_user_details(token1, setup.users['apirand1']['username'])
     new_data = {'firstname': 'Firsname3', 'lastname': 'Lastname3', 'phone': 'Phone3'}
     update_code = put_user_data(token1, setup.users['apirand1']['username'], new_data)
+    print(update_code)
+    new_password = {'password': 'NEWPASS', 'firstname': 'Firsname3', 'lastname': 'Lastname3', 'phone': 'Phone3'}
+    update_code2 = put_user_data(token2, setup.users['apirand2']['username'], new_data)
+    print(update_code2)
+    new_username = {'username': 'NEWPASS', 'firstname': 'Firsname3', 'lastname': 'Lastname3', 'phone': 'Phone3'}
+    update_code3 = put_user_data(token2, setup.users['apirand2']['username'], new_data)
+    print(update_code2)
     pass

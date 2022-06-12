@@ -17,6 +17,13 @@ def new_user2():
     return data
 
 
+@pytest.fixture(scope='session')
+def new_user3():
+    data = variables.new_random_user()
+    api.post_user(data)
+    return data
+
+
 def pytest_sessionstart(session):
     api.post_user(variables.techuser)
     code, variables.techuser_token = api.get_token(variables.techuser['username'], variables.techuser['password'])

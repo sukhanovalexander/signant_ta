@@ -7,4 +7,5 @@
 2. Github page states that GET request on route /api/users requires token. However, any user can access data even including not valid token. Corresponding method does not have @tokeqrequired decorator
 3. Any user with valid token can access another user details on route /api/users/{username}
 4. It is possible to create new user with empty password or empty username using POST method
-5. 
+5. PUT request does not change password. After sending new password I can still issue token with old password
+6. 
