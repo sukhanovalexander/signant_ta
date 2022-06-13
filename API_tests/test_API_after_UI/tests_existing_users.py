@@ -10,6 +10,7 @@ class TestExistingUsers:
         code, token = api.get_token(variables.user1['username'], variables.user1['password'])
         assert code == 200 and len(token) > 0
 
+    @pytest.mark.skipif(variables.API_after_UI_executed, reason='Please rerun UI tests first')
     def test_get_ui_user_details(self):
         token_code, token = api.get_token(variables.user1['username'], variables.user1['password'])
         assert token_code < 400, "Failed to get token in API after UI test set"

@@ -29,6 +29,10 @@ def pytest_sessionstart(session):
     code, variables.techuser_token = api.get_token(variables.techuser['username'], variables.techuser['password'])
     code, existing_users = api.get_users(variables.techuser_token)
     variables.UI_tests_executed = True if variables.user1['username'] in existing_users and \
-                                          variables.user2['username'] else False
+                                          variables.user2['username'] in existing_users else False
+
+    code, user1_token = api.get_token(variables.user1['username'], variables.user1['password'])
+    code, data = api.get_user_details(user1_token, variables.user1['username'])
+    variables.API_after_UI_executed = True if 'updated' in data['firstname'] else False
 
 

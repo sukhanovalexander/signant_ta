@@ -6,3 +6,6 @@
 /output.xml
 /report.html
 /API_tests/test_BasicCalls/pytest_report.html
+/API_tests/test_API_after_UI/after_ui.html
+/API_tests/test_BasicCalls/basic_calls.html
+/API_tests/test_complex_scenarios/complex_scenarios.html

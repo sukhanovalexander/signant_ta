@@ -28,12 +28,9 @@ user2_np = drop_pass_give_list(user2)
 user3_np = drop_pass_give_list(user3)
 
 
-apiuser1 = {'username': 'apiuser1', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
-            'phone': 'apihone1'}
-apiuser2 = {'username': 'apiuser1', 'password': 'apipass1', 'firstname': 'apifirstname1', 'lastname': 'apilastname1',
-            'phone': 'apihone1'}
 apirand1 = new_random_user()
 apirand2 = new_random_user()
+
 techuser = {'username': 'root', 'password': 'root', 'firstname': 'root', 'lastname': 'root',
             'phone': 'root'}
 techuser_token = ''
@@ -42,6 +39,7 @@ techuser_token = ''
 #         'techuser': techuser}
 
 UI_tests_executed = False
+API_after_UI_executed = False
 
 server = 'localhost:8080'
 browser = 'Chrome'
