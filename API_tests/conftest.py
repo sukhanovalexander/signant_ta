@@ -33,6 +33,7 @@ def pytest_sessionstart(session):
 
     code, user1_token = api.get_token(variables.user1['username'], variables.user1['password'])
     code, data = api.get_user_details(user1_token, variables.user1['username'])
-    variables.API_after_UI_executed = True if 'updated' in data['firstname'] else False
+    if data:
+        variables.API_after_UI_executed = True if 'updated' in data['firstname'] else False
 
 
